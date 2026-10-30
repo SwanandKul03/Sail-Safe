@@ -5,7 +5,6 @@ An interactive case-study website for an augmented reality maritime-navigation c
 ## Features
 
 - Interactive island navigation with water-only routes and collision-safe steering.
-- Dolphins, a whale and a shark appearing one after another, with locally synthesised calls and water sounds.
 - Day and night views, optional sea audio and reduced-motion support.
 - Original prototype footage with silent, on-screen video loops.
 - Full-screen image and video gallery.
@@ -28,8 +27,7 @@ Open `http://localhost:8000` in a browser. Use a web server rather than opening 
 - `app.js` — video playback, accessibility controls and media gallery.
 - `voyage.js` — interactive sailing scene.
 - `navigation.js` — routes, shoreline clearance and pier collision detection.
-- `marine-life.js` — animal models, their repeating sequence and sound synthesis.
-- `tests/` — navigation and marine-life regression tests.
+- `tests/` — navigation regression tests.
 - `assets/` — original video, extracted figures, posters, fonts and bundled Three.js files.
 
 All runtime assets are included locally. No build step or API key is required.
