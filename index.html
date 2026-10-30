@@ -1,80 +1,151 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sail Safe</title>
-    <meta
-      name="description"
-      content="Sail Safe helps make navigation safer, smarter, and more reliable for sailors."
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header class="hero">
-      <nav class="nav">
-        <div class="brand">Sail Safe</div>
-        <div class="nav-links">
-          <a href="#features">Features</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
-        </div>
-      </nav>
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#98c7d2">
+  <meta name="description" content="Sail Safe: a HoloLens 2 concept exploring a real-time, integrated view of maritime navigation. A UX case study by Swanand Kulkarni and team.">
+  <meta property="og:title" content="Sail Safe — Technology for safer and smarter sea navigation">
+  <meta property="og:description" content="From five instruments to one spatial view. A maritime AR concept for HoloLens 2.">
+  <meta property="og:type" content="website">
 
-      <div class="hero-content">
-        <div class="hero-text">
-          <p class="eyebrow">Safer and smarter navigation</p>
-          <h1>Technology for safer and smarter navigation.</h1>
-          <p class="subtitle">
-            Sail Safe helps sailors monitor conditions, improve decision-making,
-            and navigate with more confidence.
-          </p>
-          <div class="hero-actions">
-            <a class="primary-btn" href="#features">Explore</a>
-            <a class="secondary-btn" href="https://github.com/SwanandKul03/Sail-Safe" target="_blank" rel="noreferrer">View Code</a>
-          </div>
+
+  <title>Sail Safe — AR navigation case study</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="assets/inter.css">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="app.js"></script>
+  <script type="module" src="voyage.js"></script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to case study</a>
+  <section class="voyage" aria-labelledby="voyage-title">
+    <canvas id="sea-scene" tabindex="0" aria-label="Interactive sailing scene with dolphins, a whale and a shark appearing in sequence. Click the sea to sail, use W A S D or arrow keys to steer, or choose an island to visit the case study."></canvas>
+    <div class="voyage-heading"><p class="eyebrow">HoloLens 2 / Maritime navigation</p><h1 id="voyage-title">Sail Safe</h1><p class="voyage-subtitle">Technology for safer and<br> smarter sea navigation.</p></div>
+    <div class="island-links" aria-label="Explore the case study by island"><a class="island-link glass" data-port="research" href="#research"><span>01</span>Research</a><a class="island-link glass" data-port="experience" href="#experience"><span>02</span>Experience</a><a class="island-link glass" data-port="evaluation" href="#evaluation"><span>03</span>Evaluation</a></div>
+    <div class="voyage-bottom"><div><a class="read-study glass" href="#case-study">Read the case study</a></div><div class="scene-controls glass"><button type="button" class="day-control" aria-pressed="false">Night view</button><button type="button" class="sound-control" aria-pressed="false">Sound off</button><button class="motion-control" type="button" aria-pressed="false">Pause motion</button></div></div>
+    <div class="touch-stick" role="group" aria-label="Touch steering"><span class="stick-knob">Sail</span></div>
+    <p class="scene-status sr-only" role="status" aria-live="polite"></p>
+  </section>
+
+  <main id="main" class="page-shell">
+    <section class="overview" id="case-study" aria-labelledby="overview-title"><div class="overview-copy"><p class="eyebrow">The case study</p><h2 id="overview-title">A real-time view.<br> A clearer picture.</h2><p>We explored how AR could improve navigation safety and efficiency, bringing the surroundings and critical information into one real-time view.</p>      <dl class="spec-grid">
+        <div><dt>My role</dt><dd>Designer</dd></div>
+        <div><dt>Platform</dt><dd>Microsoft HoloLens 2</dd></div>
+        <div><dt>Context</dt><dd>Advanced and Immersive Technology<br> <span class="secondary">Academic group project</span></dd></div>
+      </dl></div><div class="overview-media">      <figure class="hero-film">
+        <div class="media-frame hero-media">
+          <video data-start="0" data-end="86.75" data-full="true" poster="assets/poster-hero.jpg" muted autoplay playsinline controls preload="none" aria-label="Full Sail Safe augmented reality prototype video"></video>
+          
+          <span class="media-error" hidden>Footage could not load. <button type="button" class="retry-media">Retry video</button></span>
+        </div>
+        
+      </figure></div></section>
+
+    <section class="case-section" id="problem" aria-labelledby="problem-title">
+      <div class="section-heading"><p class="section-label"><span>01</span> — Problem</p><h2 id="problem-title">Ships are stuck<br> in the <em>past.</em></h2></div>
+<div class="section-body">
+      <div class="problem-layout">
+        <div class="big-stat"><p>118,000<span>+</span></p><h3>Ships. Scattered information.</h3><p class="secondary">Ships worldwide, as cited in our project research. Navigating crowded or hazardous waters puts existing tools under pressure.</p></div>
+        <div class="pain-points">
+          <article><span class="letter">A</span><div><h3>Information overload</h3><p>Captains juggle paper charts, radar and other instruments, increasing mental strain and reducing situational awareness.</p></div></article>
+          <article><span class="letter">B</span><div><h3>Disconnected data</h3><p>Separate sources make it difficult to build a single, reliable picture of the surroundings.</p></div></article>
+          <article><span class="letter">C</span><div><h3>Slow response</h3><p>In bad weather or heavy traffic, scattered information makes quick decisions harder.</p></div></article>
         </div>
       </div>
-    </header>
+      <div class="problem-statement"><span class="mono">The problem we defined</span><blockquote>Maritime navigation still relies heavily on traditional methods, limiting situational awareness and decision-making in complex or hazardous environments.</blockquote></div>
+    </div></section>
 
-    <main>
-      <section id="features" class="section">
-        <div class="section-heading">
-          <p class="eyebrow">Why Sail Safe</p>
-          <h2>Built for confident sailing</h2>
-        </div>
-        <div class="card-grid">
-          <article class="card">
-            <h3>Weather awareness</h3>
-            <p>Track conditions that affect route planning and safety.</p>
-          </article>
-          <article class="card">
-            <h3>Route intelligence</h3>
-            <p>Make smarter navigation choices with better awareness.</p>
-          </article>
-          <article class="card">
-            <h3>Operational safety</h3>
-            <p>Support safer movement on the water through better insights.</p>
-          </article>
-        </div>
-      </section>
+    <section class="case-section" id="research" aria-labelledby="research-title">
+      <div class="section-heading"><p class="section-label"><span>02</span> — Research</p><h2 id="research-title">Five instruments,<br> no single <em>view.</em></h2></div>
+<div class="section-body">
+      <p class="section-intro">We reviewed the tools already on the bridge, explored industry precedents and interviewed a captain to understand the gap between navigation data and usable information.</p>
+      <div class="table-wrap"><table class="instrument-table"><caption class="sr-only">Existing navigation systems reviewed in the project</caption><thead><tr><th scope="col">Existing system</th><th scope="col">What it contributes</th></tr></thead><tbody>
+        <tr><th scope="row">Radar</th><td>Detects nearby vessels, rocks and icebergs.</td></tr>
+        <tr><th scope="row">AIS</th><td>Shares vessel positions for route planning and collision avoidance.</td></tr>
+        <tr><th scope="row">Gyrocompass</th><td>Provides accurate heading without magnetic interference.</td></tr>
+        <tr><th scope="row">Voyage planner</th><td>Combines weather and charts to plan safer, more efficient routes.</td></tr>
+        <tr><th scope="row">ECDIS</th><td>Displays digital charts and the ship’s location.</td></tr>
+      </tbody></table></div>
+      <div class="precedents"><p class="mono">Industry precedents</p><div><p>Furuno<span>AR navigation</span></p><p>Kongsberg<span>AR bridge</span></p><p>Wärtsilä<span>Pilot assistance</span></p><p>SEDNA<span>Arctic navigation</span></p></div></div>
+      <div class="interview"><div><span class="mono amber">From the captain interview</span><p>Slow updates, human error and poor weather exposed the limits of dated navigation methods.</p></div><blockquote>“Particularly for younger generations of crew members who are more accustomed to digital technologies.”</blockquote></div>
+      <div class="persona-grid">
+        <article class="persona"><div class="persona-top mono"><span>Persona / 01</span><span>Captain</span></div><h3>Amelia Rodriguez</h3><p class="persona-spec">38 years old <span>·</span> 15 years in maritime navigation</p><p>Needs to track nearby ships, respond to changing weather and assess alternative ports without losing sight of the sea.</p><div class="implication"><span class="mono">Design implication</span><p>Keep navigation data visible without obstructing the surroundings.</p></div></article>
+        <article class="persona"><div class="persona-top mono"><span>Persona / 02</span><span>Second mate</span></div><h3>Joe Reynold</h3><p class="persona-spec">65 years old <span>·</span> Cargo ship second mate</p><p>Needs real-time weather and underwater hazard information, with tools that translate existing expertise into a digital environment.</p><div class="implication"><span class="mono">Design implication</span><p>Use familiar controls and reduce fatigue during long voyages.</p></div></article>
+      </div>
+    </div></section>
 
-      <section id="about" class="section alt-section">
-        <div class="section-heading narrow">
-          <p class="eyebrow">About the project</p>
-          <h2>Designed for safer journeys</h2>
-        </div>
-        <p class="about-copy">
-          Sail Safe is a technology-focused project for navigation safety, helping
-          users gather information, assess conditions, and improve decision-making
-          while on the water.
-        </p>
-      </section>
-    </main>
+    <section class="case-section" id="build" aria-labelledby="build-title">
+      <div class="section-heading"><p class="section-label"><span>03</span> — Platform &amp; technical build</p><h2 id="build-title">Hands-free,<br> on the <em>bridge.</em></h2></div>
+<div class="section-body">
+      <p class="section-intro">We chose HoloLens 2 to keep captains’ and officers’ hands free on the ship bridge. The concept supports three core tasks:</p>
+      <dl class="system-grid"><div><dt>AR dashboards</dt><dd>Ship data and surroundings.</dd></div><div><dt>Remote help desk</dt><dd>On-shore support for troubleshooting.</dd></div><div><dt>Smart alerts</dt><dd>Audio and proposed touch feedback for urgent information.</dd></div></dl>
+      <div class="technical-note"><span class="mono amber">Markerless AR</span><p>Computer vision interprets the environment. GPS places information geographically. Sensor fusion tracks position and orientation without predefined markers.</p></div>
+      <details class="dossier-details"><summary><span>Proposed sensor architecture</span><span class="details-action mono">Open table</span></summary><div class="details-body"><p class="secondary">The proposed architecture combines positioning, motion and environmental sensors.</p><div class="table-wrap"><table class="sensor-table"><caption class="sr-only">Proposed sensors grouped by function</caption><thead><tr><th scope="col">Group</th><th scope="col">Component</th><th scope="col">Purpose</th></tr></thead><tbody>
+        <tr><th scope="rowgroup" rowspan="4">Position</th><td>GNSS / GPS</td><td>Location, speed and course</td></tr><tr><td>AIS</td><td>Vessel identification and position</td></tr><tr><td>Radar</td><td>Nearby ships and obstacles</td></tr><tr><td>LiDAR</td><td>Object distance and position</td></tr>
+        <tr><th scope="rowgroup" rowspan="3">Motion</th><td>Compass</td><td>Accurate heading</td></tr><tr><td>IMU</td><td>Roll, pitch and yaw</td></tr><tr><td>Wind</td><td>Wind speed and direction</td></tr>
+        <tr><th scope="rowgroup" rowspan="3">Other</th><td>Cameras</td><td>Visible and infrared views</td></tr><tr><td>Hydrophones</td><td>Nearby and underwater vessels</td></tr><tr><td>Tank level</td><td>Fuel and cargo levels</td></tr>
+      </tbody></table></div></div></details>
+    </div></section>
 
-    <footer id="contact" class="footer">
-      <p>© 2026 Sail Safe</p>
-      <a href="https://github.com/SwanandKul03/Sail-Safe" target="_blank" rel="noreferrer">GitHub Repository</a>
-    </footer>
-  </body>
+    <section class="case-section" id="concept" aria-labelledby="concept-title">
+      <div class="section-heading"><p class="section-label"><span>04</span> — Concept &amp; ideation</p><h2 id="concept-title">From sketches<br> to a <em>spatial system.</em></h2></div>
+<div class="section-body">
+      <p class="section-intro">We grouped features into heading and position, planning and awareness, and safety and vision. Sketches and storyboards explored how these would sit within the bridge environment.</p>
+      <div class="sketch-grid">
+        <figure class="evidence-figure"><button type="button" class="figure-open" data-image="assets/deck-33.webp" aria-label="Enlarge dashboard and navigation sketches"><img src="assets/deck-33.webp" alt="Pencil sketches exploring a radar dashboard and navigation panels" loading="lazy" width="2028" height="759"></button></figure>
+        <figure class="evidence-figure"><button type="button" class="figure-open" data-image="assets/deck-34.webp" aria-label="Enlarge hand menu and indicator sketches"><img src="assets/deck-34.webp" alt="Pencil sketches of a hand menu and safety indicator panel" loading="lazy" width="1840" height="679"></button></figure>
+        <figure class="evidence-figure"><button type="button" class="figure-open" data-image="assets/deck-35.webp" aria-label="Enlarge camera view sketches"><img src="assets/deck-35.webp" alt="Pencil sketches exploring surface and underwater camera views" loading="lazy" width="2028" height="736"></button></figure>
+      </div>
+      <div class="storyboard-grid">
+        <figure class="evidence-figure"><button type="button" class="figure-open" data-image="assets/deck-37.webp" aria-label="Enlarge first storyboard"><img src="assets/deck-37.webp" alt="Storyboard showing a captain opening a palm menu and accessing dashboard panels on the bridge" loading="lazy" width="1915" height="708"></button></figure>
+        <figure class="evidence-figure"><button type="button" class="figure-open" data-image="assets/deck-38.webp" aria-label="Enlarge second storyboard"><img src="assets/deck-38.webp" alt="Storyboard showing spatial panels and a captain viewing navigation information while looking out to sea" loading="lazy" width="1946" height="740"></button></figure>
+      </div>
+    </div></section>
+
+    <section class="case-section" id="design" aria-labelledby="design-title">
+      <div class="section-heading"><p class="section-label"><span>05</span> — Interaction design</p><h2 id="design-title">Eyes on<br> the <em>sea.</em></h2></div>
+<div class="section-body">
+      <div class="design-intro"><p>We based the interface on Microsoft Fluent 2 and Segoe typography for consistency and readability in mixed reality.</p><div><span class="mono amber">Designed for comfort</span><p>Critical information sits in central vision; peripheral cues draw attention when needed. Interactive elements stay at eye level, within arm’s reach.</p></div></div>
+      <div class="io-grid"><article><span class="mono">Input / 01</span><h3>Speak to navigate.</h3><p>Open screens without searching manually.</p><blockquote>“Hey Cortana, show me the tidal map”</blockquote></article><article><span class="mono">Input / 02</span><h3>Touch to explore.</h3><p>Tap objects, zoom and pan with intuitive gestures.</p></article><article><span class="mono">Output / 01</span><h3>See it in context.</h3><p>Overlay depth, hazards, warnings and nearby vessels onto the real world.</p></article><article><span class="mono">Output / 02</span><h3>Hear the direction.</h3><p>Spatial audio points towards danger; gesture sounds confirm an action.</p></article></div>
+      <figure class="interaction-film"><div class="media-frame cinematic"><video data-start="22" data-end="30" poster="assets/poster-layers.jpg" muted autoplay playsinline preload="none" aria-label="Touch gestures switching between weather map layers"></video></div></figure>
+      <div class="colour-semantics"><p class="mono">Colour as a signal</p><div><span><i class="signal clear" aria-hidden="true"></i>Green <small>Clear</small></span><span><i class="signal caution" aria-hidden="true"></i>Yellow <small>Caution</small></span><span><i class="signal critical" aria-hidden="true"></i>Red <small>Critical</small></span></div></div>
+      <div class="laws-grid"><article><span class="mono amber">Fitts’s law</span><p>Vary target size to suit distance, movement and the interaction.</p></article><article><span class="mono amber">Miller’s law</span><p>Limit the information shown to support comprehension and manage cognitive load.</p></article><article><span class="mono amber">Jakob’s law</span><p>Keep vessel interface conventions familiar to reduce confusion.</p></article></div>
+    </div></section>
+
+    <section class="case-section experience" id="experience" aria-labelledby="experience-title">
+      <div class="section-heading"><p class="section-label"><span>06</span> — Final experience</p><h2 id="experience-title">Eight views,<br> one hand menu <em>away.</em></h2></div>
+<div class="section-body">
+      
+      <figure class="dashboard-film"><div class="media-frame"><video data-start="8" data-end="16" poster="assets/poster-dashboard.jpg" muted autoplay playsinline preload="none" aria-label="Indicator, radar and navigation dashboards displayed together on a ship bridge"></video></div></figure>
+      <div class="clip-grid">
+        <figure class="clip-card"><div class="media-frame"><video data-start="3" data-end="8" poster="assets/poster-hand.jpg" muted autoplay playsinline preload="none" aria-label="Opening the palm-up hand menu"></video></div></figure>
+        <figure class="clip-card"><div class="media-frame"><video data-start="30" data-end="37" poster="assets/poster-map.jpg" muted autoplay playsinline preload="none" aria-label="Map view with maritime navigation information"></video></div></figure>
+        <figure class="clip-card"><div class="media-frame"><video data-start="41" data-end="56" poster="assets/poster-pins.jpg" muted autoplay playsinline preload="none" aria-label="Tapping spatial obstacle pins to reveal hazard details"></video></div></figure>
+        <figure class="clip-card"><div class="media-frame"><video data-start="58" data-end="66" poster="assets/poster-camera.jpg" muted autoplay playsinline preload="none" aria-label="Switching between surface and underwater cameras"></video></div></figure>
+        <figure class="clip-card"><div class="media-frame"><video data-start="71" data-end="76" poster="assets/poster-alert.jpg" muted autoplay playsinline preload="none" aria-label="A critical hazard warning displayed at eye level"></video></div></figure>
+        <figure class="clip-card"><div class="media-frame"><video data-start="77" data-end="86" poster="assets/poster-weather.jpg" muted autoplay playsinline preload="none" aria-label="Weather map layers and a green all-clear notification"></video></div></figure>
+      </div>
+    </div></section>
+
+    <section class="case-section" id="evaluation" aria-labelledby="evaluation-title">
+      <div class="section-heading"><p class="section-label"><span>07</span> — Prototyping &amp; testing</p><h2 id="evaluation-title">Tested,<br> then <em>revised.</em></h2></div>
+<div class="section-body">
+      <dl class="testing-stats"><div><dd>8</dd><dt>Participants <span>5 male / 3 female</span></dt></div><div><dd>21–30</dd><dt>Age range <span>Years old</span></dt></div><div><dd>2</dd><dt>Methods <span>Likert scale + interviews</span></dt></div></dl>
+      <p class="testing-context">Younger professionals and university students with AR exposure watched the prototype video on a laptop in a controlled setting.</p>
+      <div class="evaluation-layout"><figure class="evidence-figure result-figure"><button type="button" class="figure-open" data-image="assets/deck-67.webp" aria-label="Enlarge Likert scale result table"><img src="assets/deck-67.webp" alt="Results table: 100% agreed the concept was highly immersive; 87.5% agreed on clear communication; 75% agreed on improved learning, intuitive navigation controls, intuitive radar display and enhanced awareness" loading="lazy" width="1070" height="989"></button></figure><div class="revisions"><article><span class="revision-number">01</span><div><h3>ETA made explicit.</h3><p>We added estimated time of arrival to the destination feature following participant suggestions.</p></div></article><figure class="evidence-figure before-after"><button type="button" class="figure-open" data-image="assets/deck-70.webp" aria-label="Enlarge before and after ETA comparison"><img src="assets/deck-70.webp" alt="Before and after route widgets: the revised version includes estimated time of arrival" loading="lazy" width="1047" height="593"></button></figure><article><span class="revision-number">02</span><div><h3>Compass given its own space.</h3><p>We added a separate compass widget alongside the radar screen for easier access and customisation.</p></div></article></div></div>
+      <p class="evaluation-limit"><span class="mono amber">What this tells us</span>The study informed clarity and interface revisions. Video-based feedback does not establish performance during live navigation.</p>
+    </div></section>
+
+    <section class="case-section reflection" id="reflection" aria-labelledby="reflection-title">
+      <div class="section-heading"><p class="section-label"><span>08</span> — Reflection</p><h2 id="reflection-title">What it would<br> take at <em>sea.</em></h2></div>
+<div class="section-body">
+      <div class="reflection-grid"><div><h3 class="mono amber">Limits to resolve</h3><ul><li><strong>Ruggedness.</strong> The system must withstand water, wind and rough conditions.</li><li><strong>Positioning accuracy.</strong> Overlays must remain reliable when GPS signals weaken.</li></ul></div><div><h3 class="mono amber">Next steps from the project</h3><ul><li>Real-time maintenance and repair overlays.</li><li>Shared information between crew and workstations.</li><li>Navigation and training on larger displays.</li><li>Interactive tutorials inside the AR environment.</li></ul></div></div>
+    </div></section>
+  </main>
+
+  <footer class="site-footer page-shell"><div class="footer-wordmark" aria-hidden="true">Sail Safe</div><div class="footer-line"><a href="#top">Back to the sea</a></div></footer>
+  <dialog class="figure-dialog" aria-label="Expanded project media"><div class="dialog-toolbar"><p class="gallery-counter">Project evidence</p><div class="gallery-controls"><button type="button" class="gallery-prev">Previous</button><button type="button" class="gallery-next">Next</button><button type="button" class="dialog-close">Close</button></div></div><img src="" alt=""><video class="gallery-video" controls playsinline muted hidden aria-label="Expanded prototype clip"></video><p class="dialog-caption" role="alert" hidden></p></dialog>
+  <div class="sr-only" role="status" id="motion-status" aria-live="polite"></div>
+</body>
 </html>
